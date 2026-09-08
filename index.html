@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-en="GlowHome Lighting - Premium LED Lighting Solutions" data-ru="GlowHome Освещение - Премиальные LED решения">GlowHome Lighting</title>
+<style>
+:root {
+  --bg-primary: #0B0B0D;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f5f5f7;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a6;
+  --text-dark: #1d1d1f;
+  --accent-cyan: #00d4ff;
+  --accent-purple: #a855f7;
+  --accent-pink: #ec4899;
+  --accent-blue: #3b82f6;
+  --accent-green: #22c55e;
+  --gradient-neon: linear-gradient(135deg, #00d4ff, #a855f7, #ec4899);
+  --gradient-button: linear-gradient(135deg, #3b82f6, #a855f7);
+  --max-width: 1200px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(11, 11, 13, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-neon);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
+}
+
+.lang-btn.active {
+  background: var(--gradient-neon);
+  border-color: transparent;
+  color: #fff;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  padding: 250px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255, 1, 242, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 50%, rgba(146, 66, 252, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 100px;
+  font-weight: 1000;
+  line-height: 1.05;
+  letter-spacing: 0px;
+  margin-bottom: 36px;
+  background: linear-gradient(130deg, #eb269f 20%, #1bbde6 50%, rgba(150, 236, 110, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-text p {
+  font-size: 26px;
+  color: var(--text-secondary);
+  margin-bottom: 100px;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gradient-neon);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-carousel {
+  position: relative;
+  width: 150%;
+  max-width: 1600px;
+  aspect-ratio: 1600/1200;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow:
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.3),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  animation: carouselGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes carouselGlow {
+  from {
+    box-shadow:
+      0 0 20px rgba(0, 212, 255, 0.4),
+      0 0 40px rgba(168, 85, 247, 0.3),
+      0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    box-shadow:
+      0 0 30px rgba(0, 212, 255, 0.6),
+      0 0 60px rgba(168, 85, 247, 0.5),
+      0 0 80px rgba(236, 72, 153, 0.3),
+      0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.carousel-dot.active {
+  background: var(--accent-cyan);
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Brand Advantages */
+.advantages {
+  padding: 100px 0;
+  background: var(--bg-tertiary);
+  color: var(--text-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 17px;
+  color: #666;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.advantage-card {
+  background: #fff;
+  padding: 40px 28px;
+  border-radius: 20px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-icon {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+  border-radius: 10px;
+}
+
+.advantage-icon img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.advantage-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.advantage-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Products Section */
+.products {
+  padding: 100px 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.product-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.product-specs {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.product-specs li {
+  margin-bottom: 4px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.download-link {
+  font-size: 12px;
+  color: var(--accent-cyan);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.download-link:hover {
+  color: var(--text-primary);
+}
+
+.btn-view {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-view:hover {
+  background: var(--gradient-neon);
+  border-color: transparent;
+}
+
+.view-more-btn {
+  display: block;
+  margin: 48px auto 0;
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.view-more-btn:hover {
+  background: var(--gradient-neon);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* Product Display Section */
+.displays {
+  padding: 100px 0;
+  background: var(--bg-tertiary);
+  color: var(--text-dark);
+}
+
+.display-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.display-block:last-child {
+  margin-bottom: 0;
+}
+
+.display-block.reverse {
+  direction: rtl;
+}
+
+.display-block.reverse > * {
+  direction: ltr;
+}
+
+.display-image {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.display-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.display-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.display-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.spec-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+/* Application Scenarios */
+.scenarios {
+  padding: 100px 0;
+}
+
+.scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.scenario-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  box-shadow:
+    0 0 15px rgba(0, 212, 255, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+.scenario-card.row-top {
+  grid-column: span 3;
+}
+
+.scenario-card.row-bottom {
+  grid-column: span 2;
+}
+
+.scenario-card:hover {
+  transform: scale(1.02);
+}
+
+.scenario-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.scenario-card:hover img {
+  transform: scale(1.05);
+}
+
+.scenario-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.scenario-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Gallery */
+.gallery {
+  padding: 100px 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(0, 0, 0, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.20) 0%, transparent 45%),
+    radial-gradient(circle at 70% 75%, rgba(236, 72, 153, 0.16) 0%, transparent 40%),
+    radial-gradient(circle at 25% 85%, rgba(34, 197, 94, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+    #0B0B0D;
+  color: var(--text-primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  box-shadow:
+    0 0 15px rgba(0, 212, 255, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Contact Section */
+.contact {
+  padding: 100px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.contact-info {
+  padding: 40px;
+}
+
+.contact-info h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contact-detail h4 {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.contact-detail p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* About Section */
+.about {
+  padding: 100px 0;
+  background: var(--bg-tertiary);
+  color: var(--text-dark);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.about-subtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.about-carousel {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.about-carousel-slide.active {
+  opacity: 1;
+}
+
+.about-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.about-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.about-carousel-dot.active {
+  background: #fff;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .logo {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--text-primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background: var(--gradient-neon);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .display-block,
+  .display-block.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .display-image img {
+    height: 320px;
+  }
+
+  .scenarios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scenario-card.row-top,
+  .scenario-card.row-bottom {
+    grid-column: span 1;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-carousel {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(11, 11, 13, 0.98);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-carousel {
+    aspect-ratio: 4/3;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+  }
+
+  .advantages-grid,
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scenarios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-card.row-top,
+  .scenario-card.row-bottom {
+    grid-column: span 1;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 24px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">GlowHome</a>
+    <nav class="nav" id="nav">
+      <a href="#hero" class="nav-link active" data-en="Home" data-ru="Главная">Home</a>
+      <a href="#products" class="nav-link" data-en="Products" data-ru="Продукты">Products</a>
+      <a href="#scenarios" class="nav-link" data-en="Smart Lighting" data-ru="Умное освещение">Smart Lighting</a>
+      <a href="#about" class="nav-link" data-en="About Us" data-ru="О нас">About Us</a>
+      <a href="#contact" class="nav-link" data-en="Contact" data-ru="Контакты">Contact</a>
+    </nav>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav').classList.toggle('active')">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1 data-en="Light Up Your Life" data-ru="Осветите свою жизнь">Light Up Your Life</h1>
+      <p data-en="Premium LED strips for home, gaming, and commercial spaces" data-ru="Премиальные LED-ленты для дома, игр и коммерческих помещений">Premium LED strips for home, gaming, and commercial spaces</p>
+      <div class="hero-buttons">
+        <a href="document/DX-Light-3.7.21.exe" class="btn btn-primary" download>
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3l8-1v7H0V3zm9-1l15-2v12H9V2zm-9 8h8v7L0 17v-7zm9 0h15v12L9 20V10z"/></svg>
+          <span data-en="Windows App" data-ru="Приложение для Windows">Windows App</span>
+        </a>
+        <a href="document/DX-Light-MAC3.7.21.dmg" class="btn btn-secondary" download>
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span data-en="Mac App" data-ru="Приложение для Mac">Mac App</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-carousel" id="heroCarousel">
+      <div class="carousel-slide active">
+        <img src="assets/hero-living-room.jpg" alt="Living Room">
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/hero-tv-wall.jpg" alt="TV Wall">
+      </div>
+      <div class="carousel-slide">
+        <img src="assets/hero-gaming.jpg" alt="Gaming Room">
+      </div>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" data-slide="0"></button>
+        <button class="carousel-dot" data-slide="1"></button>
+        <button class="carousel-dot" data-slide="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brand Advantages -->
+<section class="advantages">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 data-en="Why Choose GlowHome?" data-ru="Почему выбирают GlowHome?">Why Choose GlowHome?</h2>
+      <p data-en="Premium quality, competitive pricing, and global support" data-ru="Премиальное качество, конкурентные цены и глобальная поддержка">Premium quality, competitive pricing, and global support</p>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage-card fade-in">
+        <div class="advantage-icon">
+          <img src="assets/Icon - Quality.png" alt="Quality">
+        </div>
+        <h3 data-en="Premium Manufacturing" data-ru="Премиальное производство">Premium Manufacturing</h3>
+        <p data-en="State-of-the-art facilities with strict quality control" data-ru="Современные предприятия со строгим контролем качества">State-of-the-art facilities with strict quality control</p>
+      </div>
+      <div class="advantage-card fade-in">
+        <div class="advantage-icon">
+          <img src="assets/Icon - Customization.png" alt="Customization">
+        </div>
+        <h3 data-en="OEM & ODM Solutions" data-ru="OEM и ODM решения">OEM & ODM Solutions</h3>
+        <p data-en="Tailored designs and private label partnerships" data-ru="Индивидуальный дизайн и партнерство под собственным брендом">Tailored designs and private label partnerships</p>
+      </div>
+      <div class="advantage-card fade-in">
+        <div class="advantage-icon">
+          <img src="assets/Icon - Delivery.png" alt="Delivery">
+        </div>
+        <h3 data-en="Fast Global Shipping" data-ru="Быстрая глобальная доставка">Fast Global Shipping</h3>
+        <p data-en="Worldwide logistics with reliable delivery times" data-ru="Мировая логистика с надежными сроками доставки">Worldwide logistics with reliable delivery times</p>
+      </div>
+      <div class="advantage-card fade-in">
+        <div class="advantage-icon">
+          <img src="assets/Icon - Factory.png" alt="Factory Price">
+        </div>
+        <h3 data-en="Competitive Factory Pricing" data-ru="Конкурентные заводские цены">Competitive Factory Pricing</h3>
+        <p data-en="Direct from manufacturer, no middlemen markup" data-ru="Напрямую от производителя, без наценок посредников">Direct from manufacturer, no middlemen markup</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 data-en="Featured Products" data-ru="Популярные продукты">Featured Products</h2>
+      <p data-en="Discover our premium LED lighting collection" data-ru="Откройте нашу премиальную коллекцию LED-освещения">Discover our premium LED lighting collection</p>
+    </div>
+    <div class="products-grid">
+      <!-- Card 1: 3D Projection Lamp -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - 3D Projection Lamp.jpg" alt="3D Projection Lamp">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$160</div>
+          <h3 class="product-name" data-en="3D Projection Lamp" data-ru="3D проекционный светильник">3D Projection Lamp</h3>
+          <p class="product-desc" data-en="Premium atmospheric lighting for hotels, restaurants, and homes" data-ru="Премиальное атмосферное освещение для отелей, ресторанов и домов">Premium atmospheric lighting for hotels, restaurants, and homes</p>
+          <ul class="product-specs">
+            <li data-en="LED light source, 30,000+ hour lifespan" data-ru="LED-istochnik, 30 000+ chasov zhizni">LED light source, 30,000+ hour lifespan</li>
+            <li data-en="36W-200W power range" data-ru="Диапазон мощности 36W-200W">36W-200W power range</li>
+            <li data-en="AC 85-265V / DC 24V input" data-ru="AC 85-265V / DC 24V vhod">AC 85-265V / DC 24V input</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Ambient Lighting -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Ambient Lighting.jpg" alt="Ambient Lighting">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$80</div>
+          <h3 class="product-name" data-en="Smart RGBIC Ambient Lamp" data-ru="Умная RGBIC атмосфера">Smart RGBIC Ambient Lamp</h3>
+          <p class="product-desc" data-en="Desk RGBIC lamp with music sync for gaming and workspace" data-ru="Настольная RGBIC лампа с музыкальной синхронизацией для игр и работы">Desk RGBIC lamp with music sync for gaming and workspace</p>
+          <ul class="product-specs">
+            <li data-en="RGBIC LED, 16M colors" data-ru="RGBIC LED, 16 миллионов цветов">RGBIC LED, 16M colors</li>
+            <li data-en="2.5W-10W power" data-ru="Мощность 2.5W-10W">2.5W-10W power</li>
+            <li data-en="DC 5V USB powered" data-ru="Питание DC 5V через USB">DC 5V USB powered</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 3: Color Light Strip -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Color Light Strip.jpg" alt="Color Light Strip">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$35</div>
+          <h3 class="product-name" data-en="RGBIC LED Strip" data-ru="RGBIC LED лента">RGBIC LED Strip</h3>
+          <p class="product-desc" data-en="Addressable LED strips with music mode and smart control" data-ru="Адресуемые LED-ленты с музыкальным режимом и умным управлением">Addressable LED strips with music mode and smart control</p>
+          <ul class="product-specs">
+            <li data-en="SMD 5050 RGB+IC, 60 LEDs/m" data-ru="SMD 5050 RGB+IC, 60 svetodiodov/m">SMD 5050 RGB+IC, 60 LEDs/m</li>
+            <li data-en="16M colors + white 2700K-6500K" data-ru="16M tsvetov + belyi 2700K-6500K">16M colors + white 2700K-6500K</li>
+            <li data-en="DC 5V/12V/24V input" data-ru="DC 5V/12V/24V vhod">DC 5V/12V/24V input</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 4: Colorful Night Light -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Colorful Night Light.jpg" alt="Night Light">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$18</div>
+          <h3 class="product-name" data-en="Colorful Night Light" data-ru="Цветной ночник">Colorful Night Light</h3>
+          <p class="product-desc" data-en="RGB night light with touch control for bedroom and kids" data-ru="RGB ночник с сенсорным управлением для спальни и детской">RGB night light with touch control for bedroom and kids</p>
+          <ul class="product-specs">
+            <li data-en="LED RGB, 16M colors" data-ru="LED RGB, 16 миллионов цветов">LED RGB, 16M colors</li>
+            <li data-en="1W-3W low power" data-ru="Низкая мощность 1W-3W">1W-3W low power</li>
+            <li data-en="1200-2000mAh battery" data-ru="Батарея 1200-2000mAh">1200-2000mAh battery</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 5: Water Pipe LED -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Colorful Water Pipe LED Light.jpg" alt="Water Pipe LED">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$69</div>
+          <h3 class="product-name" data-en="Water Pipe RGB LED" data-ru="Водопроводная RGB LED лента">Water Pipe RGB LED</h3>
+          <p class="product-desc" data-en="IP67 waterproof RGBIC strips for outdoor and architecture" data-ru="IP67 водонепроницаемые RGBIC ленты для улицы и архитектуры">IP67 waterproof RGBIC strips for outdoor and architecture</p>
+          <ul class="product-specs">
+            <li data-en="RGBIC, IP67 waterproof" data-ru="RGBIC, IP67 vodonepronitsaemyi">RGBIC, IP67 waterproof</li>
+            <li data-en="DC 12V/24V input" data-ru="DC 12V/24V vhod">DC 12V/24V input</li>
+            <li data-en="7W-20W per meter" data-ru="7W-20W na metr">7W-20W per meter</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 6: Moonlight Lighthouse -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Moonlight Lighthouse.png" alt="Moonlight Lighthouse">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$45</div>
+          <h3 class="product-name" data-en="Moonlight Projector Lamp" data-ru="Проектор moonlight">Moonlight Projector Lamp</h3>
+          <p class="product-desc" data-en="Moon projection with Bluetooth speaker and wireless charging" data-ru="Проекция луны с Bluetooth-колонкой и беспроводной зарядкой">Moon projection with Bluetooth speaker and wireless charging</p>
+          <ul class="product-specs">
+            <li data-en="Warm white LED, 2700K-3500K" data-ru="Теплый белый LED, 2700K-3500K">Warm white LED, 2700K-3500K</li>
+            <li data-en="2W-6W power" data-ru="Мощность 2W-6W">2W-6W power</li>
+            <li data-en="DC 5V USB-C" data-ru="DC 5V USB-C">DC 5V USB-C</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 7: Neon Light Strip -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Neon Light Strip.jpg" alt="Neon Light Strip">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$36</div>
+          <h3 class="product-name" data-en="Silicone Neon LED Strip" data-ru="Силиконовая неоновая LED лента">Silicone Neon LED Strip</h3>
+          <p class="product-desc" data-en="Flexible silicone neon strips for decorative lighting" data-ru="Гибкие силиконовые неоновые ленты для декоративного освещения">Flexible silicone neon strips for decorative lighting</p>
+          <ul class="product-specs">
+            <li data-en="SMD 2835/5050, 120 LEDs/m" data-ru="SMD 2835/5050, 120 svetodiodov/m">SMD 2835/5050, 120 LEDs/m</li>
+            <li data-en="DC 12V/24V input" data-ru="DC 12V/24V vhod">DC 12V/24V input</li>
+            <li data-en="7W-14.4W per meter" data-ru="7W-14.4W na metr">7W-14.4W per meter</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+
+      <!-- Card 8: Record Player -->
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="assets/Product - Record Player.jpg" alt="Record Player">
+        </div>
+        <div class="product-info">
+          <div class="product-price">$68</div>
+          <h3 class="product-name" data-en="Bluetooth Record Player" data-ru="Bluetooth проигрыватель">Bluetooth Record Player</h3>
+          <p class="product-desc" data-en="Vintage-style white noise Bluetooth speaker with light" data-ru="Винтажный Bluetooth-динамик с белым шумом и подсветкой">Vintage-style white noise Bluetooth speaker with light</p>
+          <ul class="product-specs">
+            <li data-en="Bluetooth 5.3" data-ru="Bluetooth 5.3">Bluetooth 5.3</li>
+            <li data-en="5W-10W power" data-ru="Мощность 5W-10W">5W-10W power</li>
+            <li data-en="30Hz-20KHz frequency" data-ru="Частота 30Hz-20KHz">30Hz-20KHz frequency</li>
+          </ul>
+          <div class="product-actions">
+            <a href="document/user's manual.txt" class="download-link" download>📄 <span data-en="Manual" data-ru="Руководство">Manual</span></a>
+            <a href="document/specification table.xlsx" class="download-link" download>📊 <span data-en="Spec Sheet" data-ru="Спецификация">Spec Sheet</span></a>
+          </div>
+          <button class="btn-view" data-en="View Details" data-ru="Подробнее">View Details</button>
+        </div>
+      </div>
+    </div>
+    <button class="view-more-btn fade-in" data-en="View More Products" data-ru="Больше продуктов">View More Products</button>
+  </div>
+</section>
+
+<!-- Product Displays -->
+<section class="displays" id="displays">
+  <div class="container">
+    <!-- Display 1: Light Bar -->
+    <div class="display-block fade-in">
+      <div class="display-image">
+        <img src="assets/Display - Light Bar.jpg" alt="LED Light Bar">
+      </div>
+      <div class="display-content">
+        <h3 data-en="Professional LED Light Bar" data-ru="Профессиональная LED панель">Professional LED Light Bar</h3>
+        <p data-en="High-performance LED light bar for indoor decoration with smart controls" data-ru="Высокопроизводительная LED панель для внутреннего декора с умным управлением">High-performance LED light bar for indoor decoration with smart controls</p>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-icon">⚡</div>
+            <span class="spec-label" data-en="Voltage" data-ru="Напряжение">Voltage</span>
+            <span class="spec-value">24V</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">💡</div>
+            <span class="spec-label" data-en="LED Density" data-ru="Плотность LED">LED Density</span>
+            <span class="spec-value" data-en="12 LEDs/m" data-ru="12 LED/m">12 LEDs/m</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">📱</div>
+            <span class="spec-label" data-en="Control" data-ru="Управление">Control</span>
+            <span class="spec-value" data-en="App + Remote" data-ru="Приложение + Пульт">App + Remote</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔌</div>
+            <span class="spec-label" data-en="Power" data-ru="Питание">Power</span>
+            <span class="spec-value" data-en="24V Adapter" data-ru="Адаптер 24V">24V Adapter</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔧</div>
+            <span class="spec-label" data-en="Installation" data-ru="Установка">Installation</span>
+            <span class="spec-value" data-en="Self-adhesive" data-ru="Самоклеящаяся">Self-adhesive</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🏠</div>
+            <span class="spec-label" data-en="Usage" data-ru="Применение">Usage</span>
+            <span class="spec-value" data-en="Indoor" data-ru="Внутреннее">Indoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display 2: Neon Light Strip -->
+    <div class="display-block reverse fade-in">
+      <div class="display-image">
+        <img src="assets/Display - Neon light strip.jpg" alt="Neon LED Strip">
+      </div>
+      <div class="display-content">
+        <h3 data-en="Neon LED Strip Lighting" data-ru="Неоновая LED лента">Neon LED Strip Lighting</h3>
+        <p data-en="Waterproof neon LED strips for indoor and outdoor decoration" data-ru="Водонепроницаемые неоновые LED ленты для внутреннего и наружного декора">Waterproof neon LED strips for indoor and outdoor decoration</p>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-icon">⚡</div>
+            <span class="spec-label" data-en="Voltage" data-ru="Напряжение">Voltage</span>
+            <span class="spec-value">5V</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">💧</div>
+            <span class="spec-label" data-en="Waterproof" data-ru="Защита от воды">Waterproof</span>
+            <span class="spec-value">IP65</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">📱</div>
+            <span class="spec-label" data-en="Control" data-ru="Управление">Control</span>
+            <span class="spec-value" data-en="App + Remote" data-ru="Приложение + Пульт">App + Remote</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔌</div>
+            <span class="spec-label" data-en="Power" data-ru="Питание">Power</span>
+            <span class="spec-value">USB</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔧</div>
+            <span class="spec-label" data-en="Installation" data-ru="Установка">Installation</span>
+            <span class="spec-value" data-en="Clip + Screw" data-ru="Клипсы + Винты">Clip + Screw</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🌍</div>
+            <span class="spec-label" data-en="Usage" data-ru="Применение">Usage</span>
+            <span class="spec-value" data-en="Indoor & Outdoor" data-ru="Внутри и снаружи">Indoor & Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display 3: Water Pipe Light Strip -->
+    <div class="display-block fade-in">
+      <div class="display-image">
+        <img src="assets/Display - Water Pipe Light Strip.jpg" alt="Water Pipe LED">
+      </div>
+      <div class="display-content">
+        <h3 data-en="Water Pipe RGB LED Strip" data-ru="Водопроводная RGB LED лента">Water Pipe RGB LED Strip</h3>
+        <p data-en="High waterproof RGBIC strips for architectural lighting and outdoor" data-ru="Высоководонепроницаемые RGBIC ленты для архитектурного освещения и улицы">High waterproof RGBIC strips for architectural lighting and outdoor</p>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-icon">⚡</div>
+            <span class="spec-label" data-en="Voltage" data-ru="Напряжение">Voltage</span>
+            <span class="spec-value">5V</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">💧</div>
+            <span class="spec-label" data-en="Waterproof" data-ru="Защита от воды">Waterproof</span>
+            <span class="spec-value">IP65</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">📱</div>
+            <span class="spec-label" data-en="Control" data-ru="Управление">Control</span>
+            <span class="spec-value" data-en="App + Remote" data-ru="Приложение + Пульт">App + Remote</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔌</div>
+            <span class="spec-label" data-en="Power" data-ru="Питание">Power</span>
+            <span class="spec-value">USB</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔧</div>
+            <span class="spec-label" data-en="Installation" data-ru="Установка">Installation</span>
+            <span class="spec-value" data-en="Clip + Screw" data-ru="Клипсы + Винты">Clip + Screw</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🌍</div>
+            <span class="spec-label" data-en="Usage" data-ru="Применение">Usage</span>
+            <span class="spec-value" data-en="Indoor & Outdoor" data-ru="Внутри и снаружи">Indoor & Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display 4: LED Light Strips -->
+    <div class="display-block reverse fade-in">
+      <div class="display-image">
+        <img src="assets/Display -LED light strips_.jpg" alt="LED Light Strips">
+      </div>
+      <div class="display-content">
+        <h3 data-en="Smart LED Light Strips" data-ru="Умные LED ленты">Smart LED Light Strips</h3>
+        <p data-en="Versatile LED strips for creative indoor and outdoor lighting projects" data-ru="Универсальные LED ленты для креативного внутреннего и наружного освещения">Versatile LED strips for creative indoor and outdoor lighting projects</p>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-icon">⚡</div>
+            <span class="spec-label" data-en="Voltage" data-ru="Напряжение">Voltage</span>
+            <span class="spec-value">5V</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">💧</div>
+            <span class="spec-label" data-en="Waterproof" data-ru="Защита от воды">Waterproof</span>
+            <span class="spec-value">IP65</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">📱</div>
+            <span class="spec-label" data-en="Control" data-ru="Управление">Control</span>
+            <span class="spec-value" data-en="App + Remote" data-ru="Приложение + Пульт">App + Remote</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔌</div>
+            <span class="spec-label" data-en="Power" data-ru="Питание">Power</span>
+            <span class="spec-value">USB</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🔧</div>
+            <span class="spec-label" data-en="Installation" data-ru="Установка">Installation</span>
+            <span class="spec-value" data-en="Clip + Screw" data-ru="Клипсы + Винты">Clip + Screw</span>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">🌍</div>
+            <span class="spec-label" data-en="Usage" data-ru="Применение">Usage</span>
+            <span class="spec-value" data-en="Indoor & Outdoor" data-ru="Внутри и снаружи">Indoor & Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Scenarios -->
+<section class="scenarios" id="scenarios">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 data-en="Smart Lighting Applications" data-ru="Применение умного освещения">Smart Lighting Applications</h2>
+      <p data-en="Transform any space with intelligent LED lighting solutions" data-ru="Преобразуйте любое пространство с помощью интеллектуальных LED-решений">Transform any space with intelligent LED lighting solutions</p>
+    </div>
+    <div class="scenarios-grid">
+      <div class="scenario-card row-top fade-in">
+        <img src="assets/hero-living-room.jpg" alt="Living Room">
+        <div class="scenario-overlay">
+          <span class="scenario-title" data-en="Living Room" data-ru="Гостиная">Living Room</span>
+        </div>
+      </div>
+      <div class="scenario-card row-top fade-in">
+        <img src="assets/hero-gaming.jpg" alt="Game Room">
+        <div class="scenario-overlay">
+          <span class="scenario-title" data-en="Game Room" data-ru="Игровая">Game Room</span>
+        </div>
+      </div>
+      <div class="scenario-card row-bottom fade-in">
+        <img src="assets/scene-bedroom.jpg" alt="Bedroom">
+        <div class="scenario-overlay">
+          <span class="scenario-title" data-en="Bedroom" data-ru="Спальня">Bedroom</span>
+        </div>
+      </div>
+      <div class="scenario-card row-bottom fade-in">
+        <img src="assets/scene-party.jpg" alt="Party">
+        <div class="scenario-overlay">
+          <span class="scenario-title" data-en="Party" data-ru="Вечеринка">Party</span>
+        </div>
+      </div>
+      <div class="scenario-card row-bottom fade-in">
+        <img src="assets/scene-commercial.jpg" alt="Commercial">
+        <div class="scenario-overlay">
+          <span class="scenario-title" data-en="Commercial" data-ru="Коммерческое">Commercial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 data-en="Client Projects" data-ru="Проекты клиентов">Client Projects</h2>
+      <p data-en="Real installations from our global portfolio" data-ru="Реальные инсталляции из нашего глобального портфеля">Real installations from our global portfolio</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <img src="assets/gallery-stairs.jpg" alt="Home Decor">
+        <div class="gallery-overlay">
+          <span class="gallery-title" data-en="Home Decor" data-ru="Домашний декор">Home Decor</span>
+        </div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="assets/hero-gaming.jpg" alt="Gaming Space">
+        <div class="gallery-overlay">
+          <span class="gallery-title" data-en="Gaming Space" data-ru="Игровое пространство">Gaming Space</span>
+        </div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="assets/scene-commercial.jpg" alt="Restaurant">
+        <div class="gallery-overlay">
+          <span class="gallery-title" data-en="Restaurant" data-ru="Ресторан">Restaurant</span>
+        </div>
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="assets/scene-party.jpg" alt="Neon Installation">
+        <div class="gallery-overlay">
+          <span class="gallery-title" data-en="Neon Installation" data-ru="Неоновая инсталляция">Neon Installation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form fade-in">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 8px;" data-en="Request a Quote" data-ru="Запросить предложение">Request a Quote</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 32px;" data-en="Tell us about your project and we'll get back to you" data-ru="Расскажите нам о вашем проекте, и мы свяжемся с вами">Tell us about your project and we'll get back to you</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label data-en="Your Name" data-ru="Ваше имя">Your Name</label>
+            <input type="text" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Company Name" data-ru="Название компании">Company Name</label>
+            <input type="text" placeholder="Acme Inc.">
+            <p class="form-hint" data-en="For wholesale, OEM, or bulk orders, please indicate your company name and estimated quantity" data-ru="Для оптовых, OEM или Bulk заказов, пожалуйста, укажите название компании и предполагаемое количество">For wholesale, OEM, or bulk orders, please indicate your company name and estimated quantity</p>
+          </div>
+          <div class="form-group">
+            <label data-en="Email Address" data-ru="Email адрес">Email Address</label>
+            <input type="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Subject" data-ru="Тема">Subject</label>
+            <input type="text" data-placeholder="How can we help you?" placeholder="How can we help you?">
+          </div>
+          <div class="form-group">
+            <label data-en="Your Message" data-ru="Ваше сообщение">Your Message</label>
+            <textarea data-placeholder="Please tell us about your project…" placeholder="Please tell us about your project…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <span data-en="Request a Quote" data-ru="Запросить предложение">Request a Quote</span>
+          </button>
+        </form>
+      </div>
+      <div class="contact-info fade-in">
+        <h3 data-en="Contact Information" data-ru="Контактная информация">Contact Information</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <h4 data-en="Address" data-ru="Адрес">Address</h4>
+            <p data-en="123 Guangming Avenue, Design District, Shenzhen, China" data-ru="123 Guangming Avenue, Design District, Shenzhen, China">123 Guangming Avenue, Design District, Shenzhen, China</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <h4 data-en="Email" data-ru="Email">Email</h4>
+            <p><a href="mailto:info@urluna.com">info@urluna.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <h4 data-en="Phone" data-ru="Телефон">Phone</h4>
+            <p>+86 18126538910</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content fade-in">
+        <h2 data-en="About URLUNA" data-ru="О URLUNA">About URLUNA</h2>
+        <p class="about-subtitle" data-en="Crafting Light Art Since 2010" data-ru="Создаём световое искусство с 2010 года">Crafting Light Art Since 2010</p>
+        <div class="about-text">
+          <p data-en="URLuna was founded with a simple mission: to create lighting products that transform spaces and enrich lives. Starting from a small workshop, we have grown into a global brand, yet our commitment to quality and craftsmanship remains unchanged." data-ru="URLuna была основана с простой миссией: создавать осветительные приборы, которые преображают пространства и обогащают жизнь. Начав с небольшой мастерской, мы выросли в глобальный бренд, но наша приверженность качеству и мастерству осталась неизменной.">URLuna was founded with a simple mission: to create lighting products that transform spaces and enrich lives. Starting from a small workshop, we have grown into a global brand, yet our commitment to quality and craftsmanship remains unchanged.</p>
+          <p data-en="URLuna serves global markets, with products exported to Europe, the Americas, and Russia, and supports international wholesale and OEM business." data-ru="URLuna обслуживает глобальные рынки, продукция экспортируется в Европу, Америку и Россию, поддерживает международный опт и OEM-бизнес.">URLuna serves global markets, with products exported to Europe, the Americas, and Russia, and supports international wholesale and OEM business.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label" data-en="Years Experience" data-ru="Лет опыта">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label" data-en="Countries Served" data-ru="Обслуженных стран">Countries Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label" data-en="Product Designs" data-ru="Дизайнов продуктов">Product Designs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99%</div>
+            <div class="stat-label" data-en="Customer Satisfaction" data-ru="Удовлетворённость клиентов">Customer Satisfaction</div>
+          </div>
+        </div>
+        <button class="btn btn-primary">
+          <span data-en="Learn More About Us" data-ru="Узнать больше о нас">Learn More About Us</span>
+        </button>
+      </div>
+      <div class="about-carousel fade-in" id="aboutCarousel">
+        <div class="about-carousel-slide active">
+          <img src="assets/factory-1.jpg" alt="Factory 1">
+        </div>
+        <div class="about-carousel-slide">
+          <img src="assets/factory-2.jpg" alt="Factory 2">
+        </div>
+        <div class="about-carousel-slide">
+          <img src="assets/factory-3.jpg" alt="Factory 3">
+        </div>
+        <div class="about-carousel-dots">
+          <button class="about-carousel-dot active" data-slide="0"></button>
+          <button class="about-carousel-dot" data-slide="1"></button>
+          <button class="about-carousel-dot" data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">GlowHome</div>
+        <p data-en="Premium lighting solutions for modern spaces." data-ru="Премиальные осветительные решения для современных пространств.">Premium lighting solutions for modern spaces.</p>
+      </div>
+      <div class="footer-column">
+        <h4 data-en="Quick Links" data-ru="Быстрые ссылки">Quick Links</h4>
+        <ul>
+          <li><a href="#hero" data-en="Home" data-ru="Главная">Home</a></li>
+          <li><a href="#products" data-en="Products" data-ru="Продукты">Products</a></li>
+          <li><a href="#about" data-en="About Us" data-ru="О нас">About Us</a></li>
+          <li><a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 data-en="Products" data-ru="Продукты">Products</h4>
+        <ul>
+          <li><a href="#" data-en="Low-Voltage LED Strips" data-ru="Низковольтные LED ленты">Low-Voltage LED Strips</a></li>
+          <li><a href="#" data-en="Neon LED Strips" data-ru="Неоновые LED ленты">Neon LED Strips</a></li>
+          <li><a href="#" data-en="Water Pipe LEDs" data-ru="Водопроводные LED">Water Pipe LEDs</a></li>
+          <li><a href="#" data-en="PC Backlighting" data-ru="PC подсветка">PC Backlighting</a></li>
+          <li><a href="#" data-en="Wake-Up Lights" data-ru="Будильники-свет">Wake-Up Lights</a></li>
+          <li><a href="#" data-en="Bathroom Lights" data-ru="Свет для ванной">Bathroom Lights</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 data-en="Follow Us" data-ru="Мы в соцсетях">Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Twitter">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="YouTube">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 GlowHome Lighting. <span data-en="All rights reserved." data-ru="Все права защищены.">All rights reserved.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
